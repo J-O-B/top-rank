@@ -9,28 +9,50 @@
         {% endblock %}
         {% block extra_meta %}
         {% endblock %}
-
+        
         {% block corecss %}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
+            <!--Local CSS-->
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">  
         {% endblock %}
         {% block extra_css %}
         {% endblock %}
-
+        
         {% block corejs %}
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/a52b198673.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            <!--Stripe-->
+            <script src="https://js.stripe.com/v3/"></script>
+            <!--Local JS-->  
+            <script src="{% static 'js/base.js' %}"></script>
         {% endblock %}
         {% block extra_js %}
         {% endblock %}
 
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <!--Facebook SEO-->
+        <meta property="og:title" content="Your Store Template">
+        <meta property="og:description" content="A customizable web store with stripe payments, admin panel and more.">
+        <meta property="og:image" content="{% static 'media/background.jpg' %}">
+        <meta property="og:url" content="">
 
-        <title>Top Rank{% block extra_title %}{% endblock %}</title>
+        <!--Twitter SEO-->
+        <meta name="twitter:title" content="Your Store Template ">
+        <meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
+        <meta name="twitter:image" content="{% static 'media/background.jpg' %}">
+        <meta name="twitter:card" content="summary_large_image">        
+
+        <!--Icon-->
+        <link rel="icon" type="image/jpg" href="{% static 'img/flag.png' %}"/>
+
+        <!--Browser Title-->
+        <title>&#x2720; {% block extra_title %}{% endblock %} Top Rank &#x2720;</title>
     </head>
     <body>
         <header class="container-fluid fixed-top">
-            <div class="row">
+            <div id="topnav" class="row pt-lg-0 text-center text-lg-left">
                 <!--Logo-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
