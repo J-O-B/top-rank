@@ -43,10 +43,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.linkedin',
-    'allauth.socialaccount.providers.twitter',
 ]
 
 MIDDLEWARE = [
@@ -85,41 +81,8 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-FACEBOOK_LOG = {'facebook':
-                {'METHOD': 'oauth2',
-                 'SCOPE': ['email', 'public_profile', 'user_friends'],
-                 'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-                 'FIELDS': [
-                    'id',
-                    'email',
-                    'name',
-                    'first_name',
-                    'last_name',
-                    'verified',
-                    'locale',
-                    'timezone',
-                    'link',
-                    'gender',
-                    'updated_time'],
-                 'EXCHANGE_TOKEN': True,
-                 'LOCALE_FUNC': lambda request: 'kr_KR',
-                 'VERIFIED_EMAIL': False,
-                 'VERSION': 'v2.4'}}
-
-SOCIALACCOUNT_PROVIDERS = FACEBOOK_LOG
-
-# facebook
-# App ID
-SOCIAL_AUTH_FACEBOOK_KEY = '883842212405291'
-# app key
-SOCIAL_AUTH_FACEBOOK_SECRET = 'f11d27a27a43bb711f32d18ca7b91c12'
-
-
-# if you succeed in login, you'll be redirected to the main page.
 
 SITE_ID = 1
-
-
 
 # Emails print to console (development)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -130,8 +93,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/success"
+LOGIN_REDIRECT_URL = "/"
 
+# WSGI
 WSGI_APPLICATION = 'top_rank.wsgi.application'
 
 
