@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.twitter',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +69,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
+                # Required by allauth
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -66,6 +77,60 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+FACEBOOK_LOG = {'facebook':
+                {'METHOD': 'oauth2',
+                 'SCOPE': ['email', 'public_profile', 'user_friends'],
+                 'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+                 'FIELDS': [
+                    'id',
+                    'email',
+                    'name',
+                    'first_name',
+                    'last_name',
+                    'verified',
+                    'locale',
+                    'timezone',
+                    'link',
+                    'gender',
+                    'updated_time'],
+                 'EXCHANGE_TOKEN': True,
+                 'LOCALE_FUNC': lambda request: 'kr_KR',
+                 'VERIFIED_EMAIL': False,
+                 'VERSION': 'v2.4'}}
+
+SOCIALACCOUNT_PROVIDERS = FACEBOOK_LOG
+
+# facebook
+# App ID
+SOCIAL_AUTH_FACEBOOK_KEY = '883842212405291'
+# app key
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f11d27a27a43bb711f32d18ca7b91c12'
+
+
+# if you succeed in login, you'll be redirected to the main page.
+
+SITE_ID = 1
+
+
+
+# Emails print to console (development)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = "/success"
 
 WSGI_APPLICATION = 'top_rank.wsgi.application'
 
