@@ -66,7 +66,7 @@
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-100">
-                            <input name="q" placeholder="Find your next project" type="text" class="form-control border border-black rounded-1">
+                            <input name="q" placeholder="Find your next project..." type="text" class="form-control border border-black rounded-1">
                             <div class="input-group-append">
                                 <button type="submit" class="form-control btn btn-black border border-black rounded-1">
                                     <span class="icon">
@@ -165,7 +165,7 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="find-a-freelance">
-                            <li><a class="dropdown-item active" href="#"><i class="fas fa-chevron-right"></i> About Top Rank</a></li>
+                            <li><a class="dropdown-item active" href="{% url 'about_us' %}"><i class="fas fa-chevron-right"></i> About Top Rank</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> How It Works</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Cost Efectiveness</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
@@ -195,6 +195,7 @@
         {% endif %}
 
         {% block page_header %}
+        <div class="row" id="space-top"></div>
         {% endblock %}
 
         {% block content %}
@@ -202,7 +203,7 @@
 
         <footer class="container-fluid">
             <div class="row">
-                <div class="col text-center border-white">
+                <div class="col text-center border-white inner-green">
                     <h2 class="text-muted display-9">Navigation</h2>
                     <ul class="list-unstyled">
                         <li>Browse</li>
@@ -211,7 +212,7 @@
                         <li>Special Offers</li>
                     </ul>
                 </div>
-                <div class="col text-center border-white">
+                <div class="col text-center border-white inner-green">
                     <h2 class="text-muted display-9">About</h2>
                     <ul class="list-unstyled">
                         <li>About Us</li>
@@ -220,7 +221,7 @@
                         <li>Pricing</li>
                     </ul>
                 </div>
-                <div class="col text-center border-white">
+                <div class="col text-center border-white inner-green">
                     <h2 class="text-muted display-9">Legal</h2>
                     <ul class="list-unstyled">
                         <li>Cookie Policy</li>
@@ -229,13 +230,13 @@
                         <li>Terms Of Use</li>
                     </ul>
                 </div>
-                <div class="col text-center border-white">
+                <div class="col text-center border-white inner-green">
                     <h2 class="text-muted display-9">Social</h2>
                     <ul class="list-unstyled">
                         <li>Facebook</li>
                         <li>Twitter</li>
                         <li>Instagram</li>
-                        <li>LinkedIN</li>
+                        <li>LinkedIn</li>
                     </ul>
                 </div>
 

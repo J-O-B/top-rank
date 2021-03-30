@@ -15,18 +15,27 @@ body{
     height: 1.5rem;
     width: 1.5rem;
 }
+#space-top{
+    margin-top: 150px;
+}
 .logo-font{
     text-transform: uppercase;
 }
 
 #topnav{
     background: #fafafa;
-    border-bottom: 1px solid #6c757d; /* #6c757d is bootstraps 'dark' color */
+    color: #333333
 }
+
 #bottomnav>div{
     border-left: 2px solid #fafafa;
     border-right: 2px solid #fafafa;
     border-bottom: 2px solid #fafafa;
+}
+
+#bottomnav p{
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #000;
 }
 
 .main-logo-link{
@@ -40,36 +49,74 @@ body{
     box-shadow: 2px 2px 5px #000;
     transition: all 0.2s ease-in-out;
 }
-.btn-black{
-    background: #fafafa;
-    color: #000;
-    border: 2px solid #000;
-    box-shadow: 2px 2px 5px #000;
-    transition: all 0.2s ease-in-out;
+
+/* --- Div Styling --- */
+.inner-green{
+    background: linear-gradient(90deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754),
+                linear-gradient(180deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754);
 }
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus{
-    background: #000;
-    color: #fafafa;
-    border: 2px solid #fafafa;
-    font-weight: bolder;
-    box-shadow: 2px 2px 5px #fafafa;
-}
+
+/* --- Text --- */
 .text-black{
     color: #000 !important;
 }
 .text-white{
     color: #fafafa !important;
 }
+
+/* --- Buttons --- */
+
+.btn-black{
+    background: #000;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    box-shadow: 2px 2px 5px #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+.btn-white,
+.active-btn{
+    background: #fafafa;
+    color: #000;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 5px #000;
+    transition: all 0.2s ease-in-out;
+}
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus{
+    background: #fafafa;
+    color: #000;
+    text-shadow: 1px 1px 3px #333333;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus{
+    background: #000;
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    font-weight: bolder;
+    box-shadow: 2px 2px 5px #fafafa;
+}
+
+
+/* --- Borders --- */
 .border-black{
     border: 1px solid #000;
 }
 .border-white{
     border: 1px solid #fafafa;
+}
+/* --- Deviders --- */
+.hr-center{
+    margin: 0 auto;
+    width: 100px;
+    border: 2px solid #fafafa;
+    padding: 1px;
+
 }
 /* ------------------------------------- Homepage --- */
 #hero{
@@ -108,7 +155,23 @@ body{
     z-index: 0;
 }
 
+/* ------------------------------------- About Pages --- */
 
+#about-box{
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#tabs{
+    overflow-y: auto;
+}
+#tabs p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: help;
+}
+#info-box p{
+    line-height: 2;
+}
 
 /* ------------------------------------- Media Queries --- */
 /* Slightly larger container on XL screens */
@@ -133,11 +196,18 @@ body{
         display: none;
     }
 }
+/* small screens */
 @media (max-width: 991px){
     .header-container{
         padding-top: 150px;
     }
     #bottomnav{
+        display: none;
+    }
+    #space-top{
+        margin-top: 250px;
+    }
+    .med-and-up{
         display: none;
     }
 }
