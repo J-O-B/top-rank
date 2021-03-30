@@ -45,10 +45,10 @@
         <meta name="twitter:card" content="summary_large_image">        
 
         <!--Icon-->
-        <link rel="icon" type="image/jpg" href="{% static 'img/flag.png' %}"/>
+        <link rel="icon" type="image/jpg" href="{% static 'img/favicons.png' %}"/>
 
         <!--Browser Title-->
-        <title>&#x2720; {% block extra_title %}{% endblock %} Top Rank &#x2720;</title>
+        <title>{% block extra_title %}{% endblock %} Top Rank Freelance</title>
     </head>
     <body>
         <header class="container-fluid fixed-top">
@@ -56,9 +56,10 @@
                 <!--Logo-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0">
+                        <img src="{% static 'img/logoTop.png' %}" alt="Top Rank Freelance Logo">
+                        <!--<h2 class="logo-font text-black my-0 text-sm-center">
                             <strong>Top Rank</strong> Freelance
-                        </h2>
+                        </h2>-->
                     </a>
                 </div>
                 <!--Searchbar-->
@@ -79,6 +80,22 @@
                 <!--Account & Cart-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item dropdown small-only">
+                            <a href="#" class="text-black nav-link" id="menu-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-bars fa-lg"></i></div>
+                                    <p class="my-0">Menu</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="menu-drop">
+                                    <a href="" class="dropdown-item">Browse</a>
+                                    <a href="" class="dropdown-item">Categories</a>
+                                    <a href="" class="dropdown-item">Products</a>
+                                    <a href="" class="dropdown-item">About Us</a>
+                                    <a href="" class="dropdown-item">Legal</a>
+                                    <a href="" class="dropdown-item">Contact Us</a>
+                            </div>
+                        </li>
                         <li class="list-inline-item dropdown">
                             <a href="#" class="text-black nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
@@ -119,58 +136,56 @@
                     <div class="col-3 text-center dropdown p-0">
                         <a href="#" class="btn btn-secondary nav-link w-100 p-0" id="browseProducts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <p class="my-0 logo-font">Products</p>
+                                <p class="my-0 logo-font">Products <i class="fas fa-chevron-circle-down small"></i></p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="browseProducts">
-                            <li><a class="dropdown-item active" href="#">All</a></li>
-                            <li><a class="dropdown-item" href="#">Products</a></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li><a class="dropdown-item active" href="#"><i class="fas fa-chevron-right"></i> Browse All</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> By Category</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> By Price</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Discounted</a></li>
                         </ul>
                     </div>
                     <div class="col-3 text-center dropdown p-0">
                         <a href="#" class="btn btn-secondary nav-link w-100 p-0" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <p class="my-0 logo-font">About</p>
+                                <p class="my-0 logo-font">Freelancers <i class="fas fa-chevron-circle-down small"></i></p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="about-us">
-                            <li><a class="dropdown-item active" href="#">All</a></li>
-                            <li><a class="dropdown-item" href="#">Products</a></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li><a class="dropdown-item active" href="#"><i class="fas fa-chevron-right"></i> Browse All</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Browse By Cost</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Top Ranked</a></li>
                         </ul>
                     </div>
                     <div class="col-3 text-center dropdown p-0">
                         <a href="#" class="btn btn-secondary nav-link w-100 p-0" id="find-a-freelance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <p class="my-0 logo-font">Find A Freelance</p>
+                                <p class="my-0 logo-font">About Us <i class="fas fa-chevron-circle-down small"></i></p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="find-a-freelance">
-                            <li><a class="dropdown-item active" href="#">All</a></li>
-                            <li><a class="dropdown-item" href="#">Products</a></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li><a class="dropdown-item active" href="#"><i class="fas fa-chevron-right"></i> About Top Rank</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Cost Efectiveness</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
                         </ul>
                     </div>
                     <div class="col-3 text-center dropdown p-0">
                         <a href="#" class="btn btn-secondary nav-link w-100 p-0" id="faq" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <p class="my-0 logo-font">FAQ</p>
+                                <p class="my-0 logo-font">FAQ <i class="fas fa-chevron-circle-down small"></i></p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="faq">
-                            <li><a class="dropdown-item active" href="#">All</a></li>
-                            <li><a class="dropdown-item" href="#">Products</a></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li><a class="dropdown-item active" href="#"><i class="fas fa-chevron-right"></i> General FAQ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Pricing FAQ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Legal FAQ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Security FAQ</a></li>
                         </ul>
                     </div>
                 </div>    
             </div>
-            
         </header>
         
         {% if messages %}
@@ -185,8 +200,46 @@
         {% block content %}
         {% endblock %}
 
-        <footer class="container-fluid fixed-bottom">
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="col text-center border-white">
+                    <h2 class="text-muted display-9">Navigation</h2>
+                    <ul class="list-unstyled">
+                        <li>Browse</li>
+                        <li>Categories</li>
+                        <li>Freelancers</li>
+                        <li>Special Offers</li>
+                    </ul>
+                </div>
+                <div class="col text-center border-white">
+                    <h2 class="text-muted display-9">About</h2>
+                    <ul class="list-unstyled">
+                        <li>About Us</li>
+                        <li>How It Works</li>
+                        <li>Benefits Of Freelancers</li>
+                        <li>Pricing</li>
+                    </ul>
+                </div>
+                <div class="col text-center border-white">
+                    <h2 class="text-muted display-9">Legal</h2>
+                    <ul class="list-unstyled">
+                        <li>Cookie Policy</li>
+                        <li>GDPR</li>
+                        <li>Affiliate Notice</li>
+                        <li>Terms Of Use</li>
+                    </ul>
+                </div>
+                <div class="col text-center border-white">
+                    <h2 class="text-muted display-9">Social</h2>
+                    <ul class="list-unstyled">
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>LinkedIN</li>
+                    </ul>
+                </div>
 
+            </div>
         </footer>
         {% block postloadjs %}
         {% endblock %}
