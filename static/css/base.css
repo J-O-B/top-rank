@@ -35,7 +35,8 @@ body{
 
 #bottomnav p{
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px #000;
+    text-shadow: 1px 2px 5px #198754;
+    color: #fafafa;
 }
 
 .main-logo-link{
@@ -62,6 +63,9 @@ body{
 }
 .text-white{
     color: #fafafa !important;
+}
+.green-shadow{
+    text-shadow: 1px 2px 5px #198754;
 }
 
 /* --- Buttons --- */
@@ -110,13 +114,21 @@ body{
 .border-white{
     border: 1px solid #fafafa;
 }
-/* --- Deviders --- */
+/* --- Deviders / Breadcrumbs --- */
 .hr-center{
     margin: 0 auto;
     width: 100px;
-    border: 2px solid #fafafa;
+    border: 2px;
     padding: 1px;
-
+}
+.left-div{
+    width: 250px;
+    border: 2px;
+    padding: 1px;
+}
+.breadcrumbs,
+.breadcrumbs i{
+    color: #198754;
 }
 /* ------------------------------------- Homepage --- */
 #hero{

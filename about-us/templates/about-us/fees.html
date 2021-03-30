@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="row" id="space-top"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <p class="small breadcrumbs">
+                <strong>You Are Here:</strong> 
+                <a href="{% url 'home' %}">HOME</a> <i class="fas fa-chevron-circle-right"></i> 
+                <a href="{% url 'about_us' %}">ABOUT</a> <i class="fas fa-chevron-circle-right"></i> 
+                <a href="#">FEES</a>
+            </p>
+            <div class="col-12 text-center">
+                <h1 class="logo-font display-3 text-muted">
+                    Fees
+                </h1>
+                <p class="h2">Top Rank Freelance</p>
+                <hr class="hr-center">
+            </div>
+        </div>
+
+        <div class="row">
+            <h2 class="text-muted">Our Fees</h2>
+            <hr class="left-div">
+            <div class="row">
+                <div class="col border-white">
+                    <h3 class="text-center"><u>For Freelancers</u></h3>
+                    <hr class="hr-center">
+                    <p>
+                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                        <hr>
+                        <strong><u>:</u></strong> <em>€0.00</em><br>
+                        <hr>
+                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                        <hr>
+                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                    </p>
+                </div> 
+                <div class="col text-center border-white">
+                    <h3 class="text-center"><u>For Buyers</u></h3>
+                </div>     
+            </div>
+        </div>
+    </div>
+{% endblock %}

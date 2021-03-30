@@ -3,5 +3,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('about-us/', views.about_us, name="about_us"),
+    path('', views.about_us, name="about_us"),
+    path('fees/', views.fees, name="fees"),
+    path('comission/', views.commission, name="commission"),
+    path('freelance-features/', views.feat_freelancer, name="feat_freelancer"),
+    path('buyer-features/', views.feat_members, name="feat_members"),
 ]

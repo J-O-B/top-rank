@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="row" id="space-top"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <p class="small breadcrumbs">
+                <strong>You Are Here:</strong> 
+                <a href="{% url 'home' %}">HOME</a> <i class="fas fa-chevron-circle-right"></i> 
+                <a href="{% url 'about_us' %}">ABOUT</a> <i class="fas fa-chevron-circle-right"></i> 
+                <a href="#">COMMISSION</a>
+            </p>
+            <div class="col-12 text-center">
+                <h1 class="logo-font display-3 text-muted">
+                    Commission
+                </h1>
+                <p class="h2">Top Rank Freelance</p>
+                <hr class="hr-center">
+            </div>
+        </div>
+    </div>
+{% endblock %}
