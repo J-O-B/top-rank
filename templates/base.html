@@ -168,7 +168,8 @@
                             <li><a class="dropdown-item active" href="{% url 'about_us' %}"><i class="fas fa-chevron-right"></i> About Top Rank</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> How It Works</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Cost Efectiveness</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                            <li><a class="dropdown-item" href="{% url 'fees' %}"><i class="fas fa-chevron-right"></i> Fees</a></li>
+                            <li><a class="dropdown-item" href="{% url 'commission' %}"><i class="fas fa-chevron-right"></i> Comission</a></li>
                         </ul>
                     </div>
                     <div class="col-3 text-center dropdown p-0">
@@ -215,10 +216,11 @@
                 <div class="col text-center border-white inner-green">
                     <h2 class="text-muted display-9 green-shadow">About</h2>
                     <ul class="list-unstyled">
-                        <li>About Us</li>
+                        <li><a href="{% url 'about_us' %}">About Us</a></li>
                         <li>How It Works</li>
                         <li>Benefits Of Freelancers</li>
-                        <li>Pricing</li>
+                        <li><a href="{% url 'fees' %}">Fees</a></li>
+                        <li><a href="{% url 'commission' %}">Commission</a></li>
                     </ul>
                 </div>
                 <div class="col text-center border-white inner-green">
