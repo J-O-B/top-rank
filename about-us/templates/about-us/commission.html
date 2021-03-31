@@ -22,5 +22,35 @@
                 <hr class="hr-center">
             </div>
         </div>
+        <div class="row">
+            <h2 class="text-muted">Our Fees</h2>
+            <hr class="left-div">
+            <div class="row mb-5">
+                <h3 class="text-center">
+                    Current Fees:
+                </h3>
+                <ol>
+                    <li>Top Rank currently operates on a policy of minimal charges. This policy includes commission.</li>
+                    <li>As a freelancer on Top Rank, you will not see any commission fees taken from you in the course of selling on Top Rank.</li>
+                    <li>Our flat fee of €1 is taken on every sale. This fee is not a factor of product price, or the quanity of products purchased in a single checkout.</li>
+                    <li>Our commission rates are subject to change.</li>
+                </ol>
+            </div>
+        </div>
     </div>
+{% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        if ($(window).width() > 600) {
+            $('#footer').addClass('fixed-bottom');
+        } 
+    });
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    });
+</script>
 {% endblock %}

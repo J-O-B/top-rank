@@ -26,24 +26,70 @@
         <div class="row">
             <h2 class="text-muted">Our Fees</h2>
             <hr class="left-div">
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col border-white">
                     <h3 class="text-center"><u>For Freelancers</u></h3>
                     <hr class="hr-center">
                     <p>
-                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                        <span class="small text-muted text-center">Click Item Price For Further Information</span><br>
+                        <strong><u>Membership:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Membership Fees" data-content="Currently there are no membership fees for joining Top Rank.">
+                            $0.00*
+                        </a>
                         <hr>
-                        <strong><u>:</u></strong> <em>€0.00</em><br>
+                        <strong><u>Creating Products:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Product Costs" data-content="There are no fees associated with publishing, or promoting your services on Top Rank.">
+                            $0.00*
+                        </a>
                         <hr>
-                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                        <strong><u>Selling Products:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Selling Costs" data-content="There are currently no fees associated with selling products on Top Rank">
+                            $0.00*
+                        </a>
                         <hr>
-                        <strong><u>Membership:</u></strong> <em>€0.00</em><br>
+                        <strong><u>Transfer Fees:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Transfer Fees" data-content="Banks may vary, however from our end there are no fees associated with bank transfers.">
+                            $0.00*
+                        </a>
                     </p>
                 </div> 
-                <div class="col text-center border-white">
+                <div class="col border-white">
                     <h3 class="text-center"><u>For Buyers</u></h3>
+                    <hr class="hr-center">
+                    <p>
+                        <span class="small text-muted text-center">Click Item Price For Further Information</span><br>
+                        <strong><u>Membership:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Membership Fees" data-content="Currently there are no membership fees for joining Top Rank.">
+                            $0.00*
+                        </a>
+                        <hr>
+                        <strong><u>Hiring Developers (per hour):</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Hiring Developers" data-content="When hiring a developer on an hourly, or longer contract. The two parties will be notified and negotiations on work and remuneration do not include Top Rank, therefore no fees are added.">
+                            $0.00*
+                        </a>
+                        <hr>
+                        <strong><u>Product Purchase:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Processing Fee" data-content="A flat fee of €1 is added to every cart. This is regardless of the cost of your cart, or quantity of items in your cart.">
+                            Product Price + €1.00*
+                        </a>
+                        <hr>
+                        <strong><u>Transfer Fees:</u></strong> 
+                        <a tabindex="0" class="text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Bank Fees Vary" data-content="Bank fees do vary, however we cannot lower the price of items we have no control over!">
+                            €0.00*
+                        </a>
+                    </p>
                 </div>     
             </div>
         </div>
     </div>
+{% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    });
+</script>
 {% endblock %}

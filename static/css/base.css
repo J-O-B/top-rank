@@ -7,6 +7,7 @@ body{
     height: calc(100vh - 164px);
     color: #fafafa;
     font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
 }
 .icon {
     align-items: center;
@@ -56,6 +57,16 @@ body{
     background: linear-gradient(90deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754),
                 linear-gradient(180deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754);
 }
+.absolute-green{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754),
+                linear-gradient(180deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754);
+    z-index: 5;
+}
 
 /* --- Text --- */
 .text-black{
@@ -66,6 +77,14 @@ body{
 }
 .green-shadow{
     text-shadow: 1px 2px 5px #198754;
+}
+.popover-header{
+    color: #198754;
+    background: #000;
+    text-align: center;
+}
+.lh-2{
+    line-height: 2;
 }
 
 /* --- Buttons --- */
@@ -106,6 +125,13 @@ body{
     box-shadow: 2px 2px 5px #fafafa;
 }
 
+/* Positioning */
+.relative{
+    position: relative;
+}
+.behind{
+    z-index: -10;
+}
 
 /* --- Borders --- */
 .border-black{
@@ -184,7 +210,33 @@ body{
 #info-box p{
     line-height: 2;
 }
-
+/* --- Members --- */
+#dashboard-image{
+    position: relative;
+    background: url('../img/control.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+}
+#deals-image{
+    position: relative;
+    background: url('../img/deals.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 350px;
+    width: 100%;
+}
+#access-freelancers{
+    position: relative;
+    background: url('../img/freelancers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    height: 350px;
+    width: 100%;
+}
 /* ------------------------------------- Media Queries --- */
 /* Slightly larger container on XL screens */
 @media (min-width: 1200px){

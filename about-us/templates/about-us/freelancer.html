@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block page_header %}
 <div class="row" id="space-top"></div>
 {% endblock %}
@@ -22,5 +23,117 @@
                 <hr class="hr-center">
             </div>
         </div>
+        <div class="row">
+            <h2 class="text-muted">Freelancer Features:</h2>
+            <hr class="left-div">
+            <div class="row">
+                <div class="col-12 col-md-6 order-sm-1 p-4">
+                    <h2 class="text-center text-muted mt-4">Freelancer Dashboard:</h2>
+                    <hr class="hr-center mb-3">
+                    <ul class="unstyled-list">
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Adding Your Products" data-content="As a freelancer you will be capable of creating and adding products to our platform. These can be anything from landing pages, to content writing, but must fall within our terms of use.">
+                                Add Products
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Show Me The Money!" data-content="Located on your freelancer dashboard, you will easily view a full breakdown of the money you have earned on Top Rank.">
+                                Track Your Income
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Track Your Work" data-content="Keeping track of work can sometimes be tough. On your dashboard, you will have access to all of the orders in your order queue for easy reference.">
+                                Track Your Projects
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Everyone Likes A Deal!" data-content="To help sell your services, you may opt to create coupons. These coupons can be shared with other users, or via social media etc. This will allow you to keep your product alive, but give it a boost!">
+                                Promote With Coupons
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 order-sm-2 relative">
+                    <div class="absolute-green"></div>
+                    <div id="dashboard-image"></div>
+                </div>
+            </div>
+
+            <div class="row mb-2 mt-2">
+                <div class="col-12 col-md-6 order-2 order-md-1 relative">
+                    <div class="absolute-green"></div>
+                    <div id="deals-image"></div>
+                </div>
+                <div class="col-12 col-md-6 order-1 order-md-2 p-4">
+                    <h2 class="text-center text-muted mt-4">Rank Up With Top Rank:</h2>
+                    <hr class="hr-center mb-3">
+                    <ul class="unstyled-list">
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="How It Works" data-content="As a freelancer on Top Rank, your freelancer rating is compiled by both sales and rating analytics. The higher the score, the higher your rank. All new members join with the rank of 'Private'.">
+                                Ranking System
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Need A Referral?" data-content="All freelancers with a rank of 'Captain' or higher, is eligable for a personalized reference from Top Rank. (View more about this at the bottom of this page)">
+                                Referrals
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Search Optimization" data-content="Unlike major search engines, our search functionality will display results based on rating. Therefore the higher your rating, the more views, which may result in more sales.">
+                                Search Results
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Partnering With Top Rank" data-content="Some of the more major projects online may be for a select few. Freelancers with higher rankings may be contacted directly by Top Rank management to take part in our premium freelancing service.">
+                                Partner With Top Rank
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12 col-md-6 order-sm-1 p-4">
+                    <h2 class="text-center text-muted mt-4">Looking To Team Up?:</h2>
+                    <hr class="hr-center mb-3">
+                    <ul class="unstyled-list">
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="The Full Package" data-content="Sometimes teams work more efficiently, can produce more, and can offer a wider range of services. Partner with other freelancers to speed up your work, and potentially earn more.">
+                                Collaborate With Others
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Top Rank Community" data-content="Freelancers on Top Rank will gain access to our Slack channel. A great place to hang out and make connections.">
+                                Community
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Get Community Help" data-content="We all suffer from writers block at some stage! Simply ask the community of freelancers for help.">
+                                Shout For Help!
+                            </a>
+                        </li>
+                        <li class="lh-2">
+                            <a tabindex="0" class="h5 text-white w-50" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" title="Sharing Work" data-content="Got more work than you can handle? Ask other freelancers to help out for a portion of the pot.">
+                                Share The Work
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 order-sm-2 relative">
+                    <div class="absolute-green"></div>
+                    <div id="access-freelancers"></div>
+                </div>
+            </div>
+        </div>
     </div>
+{% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    });
+</script>
 {% endblock %}
