@@ -33,15 +33,15 @@
         {% endblock %}
 
         <!--Facebook SEO-->
-        <meta property="og:title" content="Your Store Template">
-        <meta property="og:description" content="A customizable web store with stripe payments, admin panel and more.">
-        <meta property="og:image" content="{% static 'media/background.jpg' %}">
-        <meta property="og:url" content="">
+        <meta property="og:title" content="Top Rank Freelance">
+        <meta property="og:description" content="Top Rank is a free to use online freelancer platform, pairing professional workers with business owners or people with project ideas.">
+        <meta property="og:image" content="{% static 'img/logoTop.png' %}">
+        <meta property="og:url" content="https://toprankfreelance.com">
 
         <!--Twitter SEO-->
-        <meta name="twitter:title" content="Your Store Template ">
-        <meta name="twitter:description" content=" Offering tour packages for individuals or groups.">
-        <meta name="twitter:image" content="{% static 'media/background.jpg' %}">
+        <meta name="twitter:title" content="Top Rank Freelance">
+        <meta name="twitter:description" content="Top Rank is a free to use online freelancer platform, pairing professional workers with business owners or people with project ideas.">
+        <meta name="twitter:image" content="{% static 'img/logoTop.png' %}">
         <meta name="twitter:card" content="summary_large_image">        
 
         <!--Icon-->
@@ -56,10 +56,10 @@
                 <!--Logo-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <img src="{% static 'img/logoTop.png' %}" alt="Top Rank Freelance Logo">
-                        <!--<h2 class="logo-font text-black my-0 text-sm-center">
+                        <img id="topLogo" src="{% static 'img/logoTop.png' %}" alt="Top Rank Freelance Logo">
+                        <h2 id="titleText" class="logo-font text-black my-0 text-sm-center hidden">
                             <strong>Top Rank</strong> Freelance
-                        </h2>-->
+                        </h2>
                     </a>
                 </div>
                 <!--Searchbar-->

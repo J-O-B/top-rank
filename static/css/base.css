@@ -125,6 +125,11 @@ body{
     box-shadow: 2px 2px 5px #fafafa;
 }
 
+/* Visibility */
+.hidden{
+    display: none;
+}
+
 /* Positioning */
 .relative{
     position: relative;
