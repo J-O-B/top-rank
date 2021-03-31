@@ -67,6 +67,17 @@ body{
                 linear-gradient(180deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754);
     z-index: 5;
 }
+.absolute-blend{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #333333 5%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, #333333 95%),
+                linear-gradient(180deg, #333333, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, #333333 95%);
+    z-index: 5;
+}
+
 
 /* --- Text --- */
 .text-black{
@@ -134,6 +145,12 @@ body{
 .relative{
     position: relative;
 }
+.absolute{
+    position: absolute;
+}
+.right{
+    right: 5px;
+}
 .behind{
     z-index: -10;
 }
@@ -145,6 +162,7 @@ body{
 .border-white{
     border: 1px solid #fafafa;
 }
+
 /* --- Deviders / Breadcrumbs --- */
 .hr-center{
     margin: 0 auto;
@@ -164,6 +182,10 @@ body{
 .breadcrumbs a{
     color: #fafafa;
 }
+#footer{
+    position: relative;
+    margin-top: 20px;
+}
 /* ------------------------------------- Homepage --- */
 #hero{
     position: relative;
@@ -172,7 +194,7 @@ body{
     background-size: cover;
     background-position: center center;
     overflow: hidden;
-    height: 100%;
+    min-height: 90%;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -201,11 +223,30 @@ body{
     z-index: 0;
 }
 
+.downIcon{
+    position: relative;
+    font-size: xx-large;
+    margin-top: -75px;
+    z-index: 100;
+    color: #198754;
+    text-shadow: 1px 1px 3px #fafafa;
+}
+.downIcon:hover{
+    text-shadow: 0 1px 2px #fafafa;
+    cursor: pointer;
+}
+#popular-products{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
 /* ------------------------------------- About Pages --- */
 
 #about-box{
     overflow: hidden;
     margin-bottom: 50px;
+    margin: 0 auto;
 }
 #tabs{
     overflow-y: auto;
@@ -218,6 +259,11 @@ body{
 #info-box p{
     line-height: 2;
 }
+#info-box{
+    width: 100;
+    margin: 0;
+}
+
 /* --- Members --- */
 #dashboard-image{
     position: relative;
@@ -248,14 +294,16 @@ body{
 .about-buttons{
     font-weight: bolder;
     font-size: large;
-    background: #333333;
+    background: linear-gradient(90deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754),
+                linear-gradient(180deg, #198754, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 95%, #198754);
     border: 1px solid #000;
     transition: all 0.3s ease-in-out;
     padding: 5px;
     color: #000;
 }
 .about-buttons:hover{
-    background: #000;
+    background: linear-gradient(90deg, #198754, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, #198754),
+                linear-gradient(180deg, #198754, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, #198754);
     color: #fafafa;
     transform: rotate(5deg);
     cursor: crosshair;
@@ -298,4 +346,28 @@ body{
     .med-and-up{
         display: none;
     }
+    #logo-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* ---- Carousel ---- */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators{
+    z-index: 10;
+}
+.carousel-control-prev,
+.carousel-control-next{
+    font-size: xx-large;
+    text-shadow: 2px 2px 5px #198754;
+    color: #fafafa;
+}
+.carousel-control-prev{
+    margin-left: 50px;
+}
+.carousel-control-next{
+    margin-right: 50px;
 }

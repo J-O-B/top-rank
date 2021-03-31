@@ -24,175 +24,251 @@
         </div>
         <div class="row mb-3">
             <div class="row mb-5">
-                <div class="col-6">
+                <div class="col-12 col-sm-12 col-md-6">
                     <h2 class="text-muted text-center">Pricing:</h2>
                     <div class="row">
-                        <div class="col-4 offset-2 text-center">
-                            <a href="{% url 'fees' %}" class="btn w-75 about-buttons">
-                                Fees
+                        <div class="col-6 text-center">
+                            <a href="{% url 'fees' %}" class="btn w-100 about-buttons">
+                                Our <br>Fees
                             </a>
                         </div>
-                        <div class="col-4 text-center">
-                            <a href="{% url 'commission' %}" class="btn w-75 about-buttons">
-                                Commission
+                        <div class="col-6 text-center">
+                            <a href="{% url 'commission' %}" class="btn w-100 about-buttons">
+                                Our <br>Commission
                             </a>
                         </div>    
                     </div>  
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-12 col-md-6">
                     <h2 class="text-muted text-center">Features:</h2>
                     <div class="row">
-                        <div class="col-4 offset-2 text-center">
-                            <a href="{% url 'feat_freelancer' %}" class="btn w-75 about-buttons">
-                                For Freelancers
+                        <div class="col-6 text-center">
+                            <a href="{% url 'feat_freelancer' %}" class="btn w-100 about-buttons">
+                                For <br>Freelancers
                             </a>
                         </div>
-                        <div class="col-4 text-center">
-                            <a href="{% url 'feat_members' %}" class="btn w-75 about-buttons">
-                                For Members
+                        <div class="col-6 text-center">
+                            <a href="{% url 'feat_members' %}" class="btn w-100 about-buttons">
+                                For <br>Members
                             </a>
                         </div>    
                     </div>  
                 </div>   
             </div>
             
-            <div class="row mb-5 mt-5" id="about-box">
-                <h3 class="text-muted">
-                    Basic Information:
-                </h3>
-                <!--Tabs-->
-                <div class="col-12 col-sm-12 col-md-3 mt-1" id="tabs">
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="whatstoprank">What Is Top Rank?</p>
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="whatsfreelance">What Is Freelancing?</p>
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="whatsourfee">What's Our Fee?</p>
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="returncomplain">Returns & Complaints</p>
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="oursecurity">Security</p>
-                    <p class="btn btn-black text-center border-white mb-1 w-100" id="abouthelp">Help</p>
+            <div class="row mb-5 pt-5" id="how-it-works">
+                <h2 class="text-muted logo-font">
+                    How It Works?
+                </h2>
+                <hr class="left-div">
+                <div class="row mt-4">
+                    <div class="col-12 col-sm-12 col-lg-6">
+                        <p class="p-lg-5 text-lg-end text-sm-center">
+                            <span class="lead logo-font"><em><u>For Buyers:</u></em></span><br>
+                            As a buyer, Top Rank works just like a regular online store. You may elect to sign up to our service which will improve your experience on our site, however, this 
+                            is optional. All users may browse products and make purchases as they see fit.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-6 relative my-auto">
+                        <div class="absolute-blend"></div>
+                        <img class="img-fluid float-center" src="{% static 'img/buyers.png' %}" alt="Podium Image">
+                    </div>
                 </div>
-
-                <!--Info Box-->
-                <div class="col-12 col-sm-12 col-md-9 border-white mt-1 inner-green" id="info-box">
-
-                    <div class="row mt-4" id="what-is-top-rank">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">What Is Top Rank?</h2>
-                            <hr class="hr-center">
-                            <p class="text-center">
-                                Top Rank is an online platform where freelancers can find work. Customers looking to complete projects 
-                                may use our services to find a wide range of freelancers covering multiple categories and specialities. <br>
-                                We aim to be a meeting point and / or recruitment website. Our freelancers can sell their services for set prices 
-                                or potentially get hired per hour for larger, custom projects.<br>
-                                For business owners, we aim to provide a cost effective way to provide soluitions, where the need for a full time 
-                                employee may not be required, therefore reducing your business costs and saving you money.
-                            </p>
-                        </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-6 relative my-auto order-2 order-lg-1">
+                        <div class="absolute-blend"></div>
+                        <img class="img-fluid float-end w-100" src="{% static 'img/freelance.jpg' %}" alt="Podium Image">
                     </div>
-
-                    <div class="row mt-4" id="what-is-freelance">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">What is freelancing?</h2>
-                            <hr class="hr-center">
-                            <p class="text-center">
-                                Essentially, a freelance job is one where a person works for themselves, rather than for a company. <br>
-                                While freelancers do take on contract work for companies and organizations, they are ultimately self-employed.<br>
-                                Freelancers are responsible for all sorts of things that traditional employees are not, such as setting their work hours, 
-                                keeping track of time spent on different projects, billing clients, and paying their own employment and business taxes. <br>
-                                Freelancers are not considered “employees” by the companies they work for, but rather “contractors.”
-                            </p>
-                            <hr class="hr-center mb-2">
-                            <p class="lead text-center">Freelancing At Top Rank:</p>
-                            <p class="text-center">
-                                Freelancers at Top Rank can set their own hourly rates, set their own timeframe for project delivery and set custom prices 
-                                for 'pre-packaged' projects. 
-                            </p>
-                        </div>
+                    <div class="col-12 col-sm-12 col-lg-6 order-1 order-lg-2">
+                        <p class="p-lg-5 text-lg-start text-sm-center">
+                            <span class="lead logo-font"><em><u>For Freelancers:</u></em></span><br>
+                            Freelancers who work with us can create custom products such as custom articles, logo designs, websites and more. These products can be bought "as is" for a set price.
+                            Upon purchase of your project, you will be notified of purchase. You must acknowledge receipt of this notification within 48 hours else the purchase will be refunded 
+                            to the buyer. <br>
+                            On acknowledgment of sale, you will receive 50% of the project value, with the remaining 50% being transferred to you on project completion.<br>
+                            Once you have finished a project, you will be required to electronically sign a completion form. This form can be accessed from your freelancer dashboard.
+                        </p>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-6">
+                        <p class="p-lg-5 text-lg-end text-sm-center">
+                            <span class="lead logo-font"><em><u>Freelancer Ratings:</u></em></span><br>
+                            Freelancer ratings are based on sales, and customer feedback (ratings). Higher rated freelancers will appear at the top of search results, this will result in higher 
+                            views, and potentially lead to more sales. A breakdown on our ranking system can be seen below.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-6 relative my-auto">
+                        <div class="absolute-blend"></div>
+                        <img class="img-fluid float-center" src="{% static 'img/podium.png' %}" alt="Podium Image">
+                    </div>
+                </div>
+            </div>
 
-                    <div class="row mt-4" id="our-fees">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">Our Fees</h2>
-                            <hr class="hr-center">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h3 class="lead text-muted">For Freelancers</h3>
-                                    <hr class="hr-center">
-                                    <p>
-                                        We do not charge freelancers at all. Freelancers can join our platform completely free 
-                                        and sell services for 0% commission! <br>
-                                        As freelancers ourselves, we believe this market is already competitive enough without having 
-                                        to worry about aditional fees.<br>
-                                    </p>
-                                    <p>
-                                        <a href="#" class="btn btn-success btn-sm font-weight-bold font-italic">
-                                            Sign Up Today To Join The Ranks!
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="col text-center">
-                                    <h3 class="lead text-muted">For Buyers</h3>
-                                    <hr class="hr-center">
-                                    <p>
-                                        Top Rank charges a flat fee of €1 per transaction, this fee is charged, regardless of project size or complexity. <br>
-                                        To help keep costs down, our freelancers may offer coupons. <br>
-                                        Although you may find these coupons on our freelancers social media accounts, becoming a member of Top Rank is 100% free. <br>
-                                        Members will gain access to the latest coupons that are available, which may ultimately save you money.
-                                    </p>
-                                    <p class="mb-5">
-                                        <a href="#" class="btn btn-success btn-sm font-weight-bold font-italic">
-                                            Join For Free Today!
-                                        </a>
-                                    </p>
+            <div class="row mb-5 pt-5" id="rating-system">
+                <h2 class="text-muted logo-font">
+                    Rating System
+                </h2>
+                <hr class="left-div">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 order-2 order-sm-1 relative">
+                        <div class="absolute-blend"></div>
+                        <img class="rounded mx-auto d-block" src="{% static 'img/ranks.png' %}" alt="Top Rank Ranking Icons">
+                    </div>    
+                    <div class="col-12 col-sm-12 col-md-6 order-1 order-sm-2 relative">
+                        <p class="p-lg-5 text-lg-start text-sm-center">
+                            <span class="lead logo-font"><em><u>For Freelancers:</u></em></span><br>
+                            Freelancers who work with us can create custom products such as custom articles, logo designs, websites and more. These products can be bought "as is" for a set price.
+                            Upon purchase of your project, you will be notified of purchase. You must acknowledge receipt of this notification within 48 hours else the purchase will be refunded 
+                            to the buyer. <br>
+                            On acknowledgment of sale, you will receive 50% of the project value, with the remaining 50% being transferred to you on project completion.<br>
+                            Once you have finished a project, you will be required to electronically sign a completion form. This form can be accessed from your freelancer dashboard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5 mt-5" id="about-box">
+                <h2 class="text-muted">
+                    Basic Information:
+                </h2>
+                <hr class="left-div">
+                <div class="row g-0">
+                    <!--Tabs-->
+                    <div class="col-12 col-sm-12 col-md-3 mt-1" id="tabs">
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="whatstoprank">What Is Top Rank? <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="whatsfreelance">What Is Freelancing? <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="whatsourfee">What's Our Fee? <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="returncomplain">Returns & Complaints <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="oursecurity">Security <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                        <p class="btn btn-secondary text-center border-white mb-1 w-100 relative" id="abouthelp">Help <span class="hidden absolute right"><i class="fas fa-chevron-circle-right"></i></span></p>
+                    </div>  
+
+                    <!--Info Box-->
+                    <div class="col-12 col-sm-12 col-md-9 border-white mt-1 inner-green" id="info-box">
+                        <div class="row mt-4" id="what-is-top-rank">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">What Is Top Rank?</h2>
+                                <hr class="hr-center">
+                                <p class="text-center">
+                                    Top Rank is an online platform where freelancers can find work. Customers looking to complete projects 
+                                    may use our services to find a wide range of freelancers covering multiple categories and specialities. <br>
+                                    We aim to be a meeting point and / or recruitment website. Our freelancers can sell their services for set prices 
+                                    or potentially get hired per hour for larger, custom projects.<br>
+                                    For business owners, we aim to provide a cost effective way to provide soluitions, where the need for a full time 
+                                    employee may not be required, therefore reducing your business costs and saving you money.
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="row mt-4" id="what-is-freelance">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">What is freelancing?</h2>
+                                <hr class="hr-center">
+                                <p class="text-center">
+                                    Essentially, a freelance job is one where a person works for themselves, rather than for a company. <br>
+                                    While freelancers do take on contract work for companies and organizations, they are ultimately self-employed.<br>
+                                    Freelancers are responsible for all sorts of things that traditional employees are not, such as setting their work hours, 
+                                    keeping track of time spent on different projects, billing clients, and paying their own employment and business taxes. <br>
+                                    Freelancers are not considered “employees” by the companies they work for, but rather “contractors.”
+                                </p>
+                                <hr class="hr-center mb-2">
+                                <p class="lead text-center">Freelancing At Top Rank:</p>
+                                <p class="text-center">
+                                    Freelancers at Top Rank can set their own hourly rates, set their own timeframe for project delivery and set custom prices 
+                                    for 'pre-packaged' projects. 
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="row mt-4" id="our-fees">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">Our Fees</h2>
+                                <hr class="hr-center">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3 class="lead text-muted">For Freelancers</h3>
+                                        <hr class="hr-center">
+                                        <p>
+                                            We do not charge freelancers at all. Freelancers can join our platform completely free 
+                                            and sell services for 0% commission! <br>
+                                            As freelancers ourselves, we believe this market is already competitive enough without having 
+                                            to worry about aditional fees.<br>
+                                        </p>
+                                        <p>
+                                            <a href="#" class="btn btn-success btn-sm font-weight-bold font-italic">
+                                                Sign Up Today To Join The Ranks!
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col text-center">
+                                        <h3 class="lead text-muted">For Buyers</h3>
+                                        <hr class="hr-center">
+                                        <p>
+                                            Top Rank charges a flat fee of €1 per transaction, this fee is charged, regardless of project size or complexity. <br>
+                                            To help keep costs down, our freelancers may offer coupons. <br>
+                                            Although you may find these coupons on our freelancers social media accounts, becoming a member of Top Rank is 100% free. <br>
+                                            Members will gain access to the latest coupons that are available, which may ultimately save you money.
+                                        </p>
+                                        <p class="mb-5">
+                                            <a href="#" class="btn btn-success btn-sm font-weight-bold font-italic">
+                                                Join For Free Today!
+                                            </a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row mt-4" id="returns-complaints">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">Returns & Complaints</h2>
-                            <hr class="hr-center">
-                            <p class="text-center">
-                                <span class="lead">Returns</span><br>
-                                Ultimately Top Rank do not provide products to customers, therefore we can't guarantee 
-                                returns once a project has been paid for. All returns queries should be saught directly from 
-                                your hired freelancer. <br><br>
-                                <span class="lead">Complaints</span><br>
-                                If you have ordered a project, but it either has not been completed, or if you deem a complain is 
-                                necessary. <br>
-                                To make a complaint, please use the contact form provided on the contact page, selecting "complaint" 
-                                as the contact subject. All complaints are reviewed on an individual basis. Freelancers who are deemed 
-                                to be at fault in such situations face removal from our platform.
-                            </p>
+    
+                        <div class="row mt-4" id="returns-complaints">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">Returns & Complaints</h2>
+                                <hr class="hr-center">
+                                <p class="text-center">
+                                    <span class="lead">Returns</span><br>
+                                    Ultimately Top Rank do not provide products to customers, therefore we can't guarantee 
+                                    returns once a project has been paid for. All returns queries should be saught directly from 
+                                    your hired freelancer. <br><br>
+                                    <span class="lead">Complaints</span><br>
+                                    If you have ordered a project, but it either has not been completed, or if you deem a complain is 
+                                    necessary. <br>
+                                    To make a complaint, please use the contact form provided on the contact page, selecting "complaint" 
+                                    as the contact subject. All complaints are reviewed on an individual basis. Freelancers who are deemed 
+                                    to be at fault in such situations face removal from our platform.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row mt-4" id="web-security">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">Security</h2>
-                            <hr class="hr-center">
-                            <p class="text-center">
-                                Just like anywhere on the internet, we urge all users to use caution. Although we strive to ensure 
-                                a safe and compliant platform, security is never 100%. To help ensure safety, we do not store sensitive 
-                                information on any of our users. <br>
-                                Our checkout functionality uses an industry leader in payment processing which allows for secure 
-                                checkout. <br>
-                                More information about our payment partners can be found at <a href="https://stripe.com/about" target="_blank">Stripe.com</a>
-                            </p>
+    
+                        <div class="row mt-4" id="web-security">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">Security</h2>
+                                <hr class="hr-center">
+                                <p class="text-center">
+                                    Just like anywhere on the internet, we urge all users to use caution. Although we strive to ensure 
+                                    a safe and compliant platform, security is never 100%. To help ensure safety, we do not store sensitive 
+                                    information on any of our users. <br>
+                                    Our checkout functionality uses an industry leader in payment processing which allows for secure 
+                                    checkout. <br>
+                                    More information about our payment partners can be found at <a href="https://stripe.com/about" target="_blank">Stripe.com</a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row mt-4" id="about-help">
-                        <div class="col-10 offset-1">
-                            <h2 class="logo-font text-center text-muted">Need More Help?</h2>
-                            <hr class="hr-center">
-                            <p class="text-center">
-                                Have you tried the FAQ section and can't find an answer? Thats no problem, head over to the Contact page and 
-                                choose the option "more help" as the subject. On receiving your query, we will get back to you as soon as possible.<br>
-                                <a href="#" class="btn btn-success mt-3">Contact Page</a>
-                            </p>
+    
+                        <div class="row mt-4" id="about-help">
+                            <div class="col-10 offset-1">
+                                <h2 class="logo-font text-center text-muted">Need More Help?</h2>
+                                <hr class="hr-center">
+                                <p class="text-center">
+                                    Have you tried the FAQ section and can't find an answer? Thats no problem, head over to the Contact page and 
+                                    choose the option "more help" as the subject. On receiving your query, we will get back to you as soon as possible.<br>
+                                    <a href="#" class="btn btn-success mt-3">Contact Page</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -207,38 +283,50 @@
         $('#about-help').hide();
     });
     $('#whatstoprank').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#what-is-top-rank').siblings().hide(300);
         $('#what-is-top-rank').show(600);
     });
     $('#whatsfreelance').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#what-is-freelance').siblings().hide(300);
         $('#what-is-freelance').show(600);
     });
     $('#whatsourfee').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#our-fees').siblings().hide(300);
         $('#our-fees').show(600);
     });
     $('#returncomplain').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#returns-complaints').siblings().hide(300);
         $('#returns-complaints').show(600);
     });
     $('#oursecurity').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#web-security').siblings().hide(300);
         $('#web-security').show(600);
     });
     $('#abouthelp').click(function(){
-        $(this).siblings().removeClass('active-btn').addClass('btn-secondary');
-        $(this).removeClass('btn-secondary').addClass('active-btn');
+        $(this).siblings().removeClass('btn-white').addClass('btn-secondary');
+        $(this).siblings().find('span').addClass('hidden');
+        $(this).removeClass('btn-secondary').addClass('btn-white');
+        $(this).find('span').removeClass('hidden');
         $('#about-help').siblings().hide(300);
         $('#about-help').show(600);
     });

@@ -12,7 +12,7 @@
         
         {% block corecss %}
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-            <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap">
             <!--Local CSS-->
             <link rel="stylesheet" href="{% static 'css/base.css' %}">  
         {% endblock %}
@@ -54,7 +54,7 @@
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row pt-lg-0 text-center text-lg-left">
                 <!--Logo-->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <div id="logo-container" class="col-12 col-lg-4 col-md-4 offet-lg-0 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
                         <img id="topLogo" src="{% static 'img/logoTop.png' %}" alt="Top Rank Freelance Logo">
                         <h2 id="titleText" class="logo-font text-black my-0 text-sm-center hidden">
@@ -63,7 +63,7 @@
                     </a>
                 </div>
                 <!--Searchbar-->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-12 col-lg-4 col-md-6 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-100">
                             <input name="q" placeholder="Find your next project..." type="text" class="form-control border border-black rounded-1">
@@ -79,7 +79,7 @@
                 </div>
                 <!--Account & Cart-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <ul class="list-inline list-unstyled text-center text-lg-end my-0">
                         <li class="list-inline-item dropdown small-only">
                             <a href="#" class="text-black nav-link" id="menu-drop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
@@ -91,7 +91,7 @@
                                     <a href="" class="dropdown-item">Browse</a>
                                     <a href="" class="dropdown-item">Categories</a>
                                     <a href="" class="dropdown-item">Products</a>
-                                    <a href="" class="dropdown-item">About Us</a>
+                                    <a href="{% url 'about_us' %}" class="dropdown-item">About Us</a>
                                     <a href="" class="dropdown-item">Legal</a>
                                     <a href="" class="dropdown-item">Contact Us</a>
                             </div>
@@ -166,7 +166,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark w-100 p-0" aria-labelledby="find-a-freelance">
                             <li><a class="dropdown-item active" href="{% url 'about_us' %}"><i class="fas fa-chevron-right"></i> About Top Rank</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                            <li><a class="dropdown-item" href="{% url 'about_us' %}#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i> Cost Efectiveness</a></li>
                             <li><a class="dropdown-item" href="{% url 'fees' %}"><i class="fas fa-chevron-right"></i> Fees</a></li>
                             <li><a class="dropdown-item" href="{% url 'commission' %}"><i class="fas fa-chevron-right"></i> Comission</a></li>
@@ -204,7 +204,7 @@
 
         <footer class="container-fluid" id="footer">
             <div class="row">
-                <div class="col text-center border-white inner-green">
+                <div class="col-12 col-sm-12 col-md-3 text-center border-white inner-green">
                     <h2 class="text-muted display-9 green-shadow">Navigation</h2>
                     <ul class="list-unstyled">
                         <li>Browse</li>
@@ -213,7 +213,7 @@
                         <li>Special Offers</li>
                     </ul>
                 </div>
-                <div class="col text-center border-white inner-green">
+                <div class="col-12 col-sm-12 col-md-3 text-center border-white inner-green">
                     <h2 class="text-muted display-9 green-shadow">About</h2>
                     <ul class="list-unstyled">
                         <li><a href="{% url 'about_us' %}">About Us</a></li>
@@ -223,7 +223,7 @@
                         <li><a href="{% url 'commission' %}">Commission</a></li>
                     </ul>
                 </div>
-                <div class="col text-center border-white inner-green">
+                <div class="col-12 col-sm-12 col-md-3 text-center border-white inner-green">
                     <h2 class="text-muted display-9 green-shadow">Legal</h2>
                     <ul class="list-unstyled">
                         <li>Cookie Policy</li>
@@ -232,7 +232,7 @@
                         <li>Terms Of Use</li>
                     </ul>
                 </div>
-                <div class="col text-center border-white inner-green">
+                <div class="col-12 col-sm-12 col-md-3 text-center border-white inner-green">
                     <h2 class="text-muted display-9 green-shadow">Social</h2>
                     <ul class="list-unstyled">
                         <li>Facebook</li>
