@@ -41,11 +41,6 @@
 {% endblock %}
 {% block postloadjs %}
 <script type="text/javascript">
-    $(document).ready(function(){
-        if ($(window).width() > 600) {
-            $('#footer').addClass('fixed-bottom');
-        } 
-    });
     $(function () {
         $('[data-toggle="popover"]').popover()
     });
