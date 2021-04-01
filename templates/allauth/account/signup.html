@@ -4,18 +4,61 @@
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
+{% block inner_content %}
+    <div class="row mb-5" id="signup-container">
+        <div class="col-12 col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3 border-white">
+            <div class="row">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <!--Header-->
+                    <div class="p-2 bd-highlight">
+                        <hr>
+                        <h1 class="logo-font text-center">{% trans "Sign Up" %}</h1>
+                        <h2 class="h4 text-muted text-center">Join The Ranks Of Top Rank</h2>
+                        <hr>
+                        <p class="text-muted mb-5 text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                    </div>
+                    <!--Form-->
+                    <div class="p-2 bd-highlight mx-auto">
+                        <form class="signup relative" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                            {% csrf_token %}
+                            <label for="id_email" class="form-label">E-mail:</label> 
+                            <input class="form-control mb-2" type="email" name="email" placeholder="Please Enter Your Email" autocomplete="email" required id="id_email">
+                            
+                            <label for="id_email2" class="form-label">E-mail (again):</label> 
+                            <input class="form-control mb-2" type="email" name="email2" placeholder="Confirm Your Email" required id="id_email2">
+                            
+                            <label for="id_username" class="form-label">Username:</label> 
+                            <input class="form-control mb-2" type="text" name="username" placeholder="Requested Username" autocomplete="username" minlength="4" maxlength="150" required id="id_username">
+                            
+                            <label for="id_password1" class="form-label">Password:</label> 
+                            <input class="form-control mb-2" type="password" name="password1" placeholder="Password" autocomplete="new-password" required id="id_password1">
+                            
+                            <label for="id_password2" class="form-label">Password (again):</label> 
+                            <input class="form-control mb-2" type="password" name="password2" placeholder="Confirm Password" required id="id_password2">
+        
+        
+                            {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-6">
+                                    <a class="btn btn-outline-black btn-secondary rounded-1 w-100" href="{% url 'account_login' %}">Cancel</a>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-success rounded-1 w-100">{% trans "Sign Up" %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+    })
+</script>
 {% endblock %}

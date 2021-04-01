@@ -1,0 +1,74 @@
+﻿[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "landing_page",
+      "friendly_name": "Landing Page"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "front_end",
+      "friendly_name": "Front-End Development"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "back-end",
+      "friendly_name": "Back-End Development"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "full_stack",
+      "friendly_name": "Full-Stack Development"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+      "name": "wordpress",
+      "friendly_name": "WordPress"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+      "name": "seo",
+      "friendly_name": "Search Engine Optimization"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": {
+      "name": "writing",
+      "friendly_name": "Content Writing"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+      "name": "graphics",
+      "friendly_name": "Graphic Design"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": {
+      "name": "video",
+      "friendly_name": "Video Editing"
+    }
+  }
+]

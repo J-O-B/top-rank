@@ -38,16 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # Allauth
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
     # My Apps
     'home',
-    'about-us'
+    'about-us',
+    'products',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +104,8 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = "/"
+SIGNUP_URL = '/accounts/signup/'
+SIGNUP_REDIRECT_URL = "/accounts/step2"
 
 # WSGI
 WSGI_APPLICATION = 'top_rank.wsgi.application'

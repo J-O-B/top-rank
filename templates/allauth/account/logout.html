@@ -3,19 +3,47 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
+        {% if messages %}
+            <div class="message-container">
+                <!--Messages Section-->
+            </div>
+        {% endif %}
+
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+    <div class="row mb-5">
+        <div class="col-12 col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3 border-white">
+            <div class="row">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <!--Header-->
+                    <div class="p-2 bd-highlight">
+                        <hr>
+                        <h1 class="logo-font mb-4 text-center">{% trans "Sign Out" %}</h1>
+                        <h2 class="h4 text-muted text-center">You Will Be Signed Out From Top Rank</h2>
+                        <hr>
+                    </div>
+                    <div class="p-2 bd-highlight mx-auto">
+                        <p>{% trans 'Are you sure you want to sign out?' %}</p>
+                        
+                        <form method="post" action="{% url 'account_logout' %}">
+                          {% csrf_token %}
+                          {% if redirect_field_value %}
+                          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                          {% endif %}
+                          <div class="row">
+                              <div class="col-6">
+                                  <a href="{% url 'home' %}" class="btn btn-success rounded-1 w-100">No, Return</a>
+                              </div>
+                              <div class="col-6">
+                                  <button type="submit" class="btn btn-danger rounded-1 w-100">Yes, {% trans 'Sign Out' %}</button>
+                              </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock %}

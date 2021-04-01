@@ -107,10 +107,10 @@
                                 {% if request.user.is_authenticated %}
                                     <a href="" class="dropdown-item">Product Management</a>
                                     <a href="" class="dropdown-item">My Profile</a>
-                                    <a href="" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
-                                    <a href="" class="dropdown-item">Join The Ranks</a>
-                                    <a href="" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Join The Ranks</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
                             </div>
                         </li>
@@ -192,6 +192,19 @@
         {% if messages %}
             <div class="message-container">
                 <!--Messages Section-->
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/toasts/toast_error.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/toasts/toast_warning.html' %}
+                        {% elif level == 25 %}
+                            {% include 'includes/toasts/toast_success.html' %}
+                        {% else %}
+                            {% include 'includes/toasts/toast_info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
             </div>
         {% endif %}
 
@@ -245,6 +258,9 @@
             </div>
         </footer>
         {% block postloadjs %}
+            <script type="text/javascript">
+                $('.toast').toast('show');
+            </script>
         {% endblock %}
     </body>
 </html>

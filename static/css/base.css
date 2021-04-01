@@ -186,6 +186,13 @@ body{
     position: relative;
     margin-top: 20px;
 }
+/* ------------------------------------- Allauth --- */
+#signup-container{
+    margin-top: -100px;
+}
+#login-container{
+    margin-top: -100px;
+}
 /* ------------------------------------- Homepage --- */
 #hero{
     position: relative;
