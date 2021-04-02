@@ -1,0 +1,1 @@
+signup - email - email confirm - redirect complete signup - options (buyer/freelance) - display form of selected option - form post save python - redirect dashboard.
