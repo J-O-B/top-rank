@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    # Crispy Forms
+    'crispy_forms',
+
     # My Apps
     'home',
     'about-us',
@@ -63,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'top_rank.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -103,9 +108,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = "/"
-SIGNUP_URL = '/accounts/signup/'
-SIGNUP_REDIRECT_URL = "/accounts/step2"
+LOGIN_REDIRECT_URL = "/accounts/dashboard/"
 
 # WSGI
 WSGI_APPLICATION = 'top_rank.wsgi.application'
