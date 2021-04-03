@@ -102,6 +102,9 @@ body{
 .lh-2{
     line-height: 2;
 }
+.text-black-shadow{
+    text-shadow: 1px 1px 3px #000000;
+}
 
 /* --- Buttons --- */
 
@@ -242,11 +245,11 @@ body{
 }
 .text-top{
     position: absolute;
-    top: 10px;
+    bottom: 5%;
     left: 0;
     right: 0;
     text-align: center;
-    background-color: rgba(25,135,84,0.8);
+    background-color: rgba(25,135,84,0.9);
     color: #333333;
     text-shadow: 1px -1px 3px #fafafa;
     font-weight: bolder;
@@ -271,7 +274,7 @@ body{
     position: relative;
 }
 #why-freelance{
-    margin-top: 150px;
+    margin-top: 50px;
 }
 /* ------------------------------------- About Pages --- */
 
