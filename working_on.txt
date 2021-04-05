@@ -1,6 +1,26 @@
-Create an add product form,
+Products:
+- Create an add product form,
+- extend add product to user dashboard,
 
-extend add product to user dashboard,
+Profile:
+- build out profile page
+- check further ways to gather analytics
+- define the ranking system
+- define the Profile rating system
+
+Checkout:
+- build new app
+- prices done on backend, to avoid form manipulation
+- web hooks 
+- connect checkout back to product, and profile (for analytics)
+- payment comes to me then freelancer, or can it use stripe connect?
+
+
+Additional Ideas:
+- Meeting room: Web RTC to allow members, and freelancers hold meetings
+- Messaging: design and implement a messaging system
+- Coupons: design and implement a coupon system for discounts
+- 
 
 
 
