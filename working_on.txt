@@ -1,4 +1,6 @@
-product categories as a choice for admin panel,
-new products use the product categories class.
+Create an add product form,
 
-Expand user profile page to complete user registration and create dashboard with analytics
+extend add product to user dashboard,
+
+
+

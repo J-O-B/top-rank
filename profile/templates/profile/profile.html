@@ -15,8 +15,10 @@
                 </h1>
                 {% if user.profile.user_type == 1 %}
                     <h2><span class="text-muted logo-font">Account Type:</span> <u>Member</u></h2>
+                    <p class="text-muted">Change To <a href="">Freelancer?</a></p>
                 {% else %}
                     <h2><span class="text-muted logo-font">Account Type:</span> <u>Freelancer</u></h2>
+                    <p class="text-muted">Change To <a href="">Basic Member Account?</a></p>
                 {% endif %}
                 <p class="h4"></p>
                 <hr class="hr-center">
@@ -25,7 +27,7 @@
     </div>
     <!--Analytics Section-->
     <div class="container mb-5">
-        <div class="d-flex justify-content-evenly">
+        <div class="row">
             <div class="col border-white p-3 text-center">
                 <h3 class="logo-font text-muted">Sales:</h3>
                 <hr class="hr-center">
@@ -68,12 +70,22 @@
                 <div class="profile-photo">
                     <img src="{{ user.profile.image.url }}" alt="{{user}}s photo">
                 </div>
-                <div class="d-grid gap-2 w-100 mx-auto">
-                    <button class="btn btn-success mt-4 btn-sm" type="button">Add Product</button>
-                    <button class="btn btn-secondary btn-sm" type="button">Edit Product</button>
-                    <button class="btn btn-secondary btn-sm" type="button">Edit Profile</button>
-                    <button class="btn btn-danger btn-sm" type="button">Delete Product</button>
-                    <button class="btn btn-danger btn-sm" type="button">Delete Profile</button>
+                <div class="w-100 mx-auto">
+                    {% if user.profile.first_name %}
+                    <p class="h6 text-center mt-3"><span class="text-muted">Name: </span><br>{{user.profile.first_name}}</p>
+                    {% else %}
+                    <p class="h6 text-center mt-3"><span class="text-muted">Username: </span><br>{{user}}</p>
+                    {% endif %}
+                    <p class="h6 text-center"><span class="text-muted">Member Since: </span><br>{{user.profile.member_since}}</p>
+                    {% if user.profile.user_type == 1 %}
+                        <p class="h6 text-center"><span class="text-muted">Account Type:</span><br>Member</p>
+                    {% elif user.profile.user_type == 2 %}
+                        <p class="h6 text-center"><span class="text-muted">Account Type:</span><br>Freelancer</p>
+                    {% endif %}
+                    <div class="row ms-3 me-3">
+                        <button class="btn btn-success btn-sm" type="button">Edit Profile</button><br>
+                        <button class="btn btn-success mt-1 btn-sm" type="button">Edit Profile</button>    
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-7 col-lg-9">
@@ -92,8 +104,8 @@
                     </div>
                     <!--Right Div-->
                     <div class="col-12 col-sm-12 col-md-6">
+                        <p class="h5"><span class="text-muted">Email:</span> {{user.profile.email}}</p>
                         <p class="h5"><span class="text-muted">Rating:</span> {{user.profile.rating}}</p>
-                        <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
                         <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
                         <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
                     </div>

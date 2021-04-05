@@ -89,6 +89,9 @@ class Profile(models.Model):
     product_count = models.IntegerField(
         null=True, blank=True, default=0)
 
+    hourly_rate = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True, default=0)
+
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True, default=0)
 
@@ -120,6 +123,8 @@ class Profile(models.Model):
 
     personal_website = models.CharField(
         max_length=255, null=True, blank=True)
+
+    member_since = models.DateField(auto_now=True)
 
     def __str__(self):
         return str(self.user.username)
