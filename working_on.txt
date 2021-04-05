@@ -1,0 +1,4 @@
+product categories as a choice for admin panel,
+new products use the product categories class.
+
+Expand user profile page to complete user registration and create dashboard with analytics
