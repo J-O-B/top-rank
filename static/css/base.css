@@ -206,6 +206,19 @@ body{
     position: relative;
     margin-top: 20px;
 }
+
+/* --- Photo Divs --- */
+.profile-photo{
+    height: auto;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-photo img{
+    height: 100%;
+    width: 100%;
+}
 /* ------------------------------------- Allauth / Accounts --- */
 #signup-container{
     margin-top: -100px;
@@ -347,6 +360,13 @@ body{
     cursor: crosshair;
     border: 1px solid #fafafa;
 }
+
+/* ------------------------------------- About Pages --- */
+.profile-control-card{
+    padding-left:50px;
+    padding-right: 50px;
+}
+
 /* ------------------------------------- Media Queries --- */
 /* Slightly larger container on XL screens */
 @media (min-width: 1200px){
@@ -372,6 +392,10 @@ body{
 }
 /* small screens */
 @media (max-width: 991px){
+    .profile-photo{
+        width:100px;
+        overflow: hidden;
+    }
     .header-container{
         padding-top: 150px;
     }

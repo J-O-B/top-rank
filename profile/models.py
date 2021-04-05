@@ -12,6 +12,7 @@ class ProfileChoices():
         ("graphic", "Graphic Design"),
         ("video", "Video Editing"),
         ("other", "Other"),
+        ("none", "None"),
     )
     QUALIFICATIONS = (
         ("high_school", "High School"),
@@ -54,9 +55,17 @@ class Profile(models.Model):
 
     bio = models.TextField(null=True, blank=True)
 
-    skill = models.CharField(
+    skill1 = models.CharField(
         max_length=9, choices=ProfileChoices.SKILLS,
-        null=True, blank=True, default="other")
+        null=True, blank=True, default="none")
+
+    skill2 = models.CharField(
+        max_length=9, choices=ProfileChoices.SKILLS,
+        null=True, blank=True, default="none")
+
+    skill3 = models.CharField(
+        max_length=9, choices=ProfileChoices.SKILLS,
+        null=True, blank=True, default="none")
 
     qualification = models.CharField(
         max_length=15, choices=ProfileChoices.QUALIFICATIONS,
@@ -68,8 +77,17 @@ class Profile(models.Model):
     sales = models.IntegerField(
         null=True, blank=True, default=0)
 
+    card_number = models.CharField(
+        max_length=16, null=True, blank=True)
+
+    orders = models.IntegerField(
+        null=True, blank=True, default=0)
+
     products = models.CharField(
         max_length=1024, null=True, blank=True)
+
+    product_count = models.IntegerField(
+        null=True, blank=True, default=0)
 
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True, default=0)

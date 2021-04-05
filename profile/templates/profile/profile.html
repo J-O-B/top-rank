@@ -24,19 +24,95 @@
         </div>
     </div>
     <!--Analytics Section-->
-    <div class="container-fluid">
+    <div class="container mb-5">
         <div class="d-flex justify-content-evenly">
-            <div class="col justify-content-evenly border-white">
-                One
+            <div class="col border-white p-3 text-center">
+                <h3 class="logo-font text-muted">Sales:</h3>
+                <hr class="hr-center">
+                <br>
+                <p class="lead">{{user.profile.sales}}</p>
             </div>
-            <div class="col justify-content-evenly border-white">
-                Two
+            <div class="col border-white p-3 text-center">
+                <h3 class="logo-font text-muted">Earnings:</h3>
+                <hr class="hr-center">
+                <br>
+                <p class="lead">€{{user.profile.earnings}}</p>
             </div>
-            <div class="col justify-content-evenly border-white">
-                Three
+            <div class="col border-white p-3 text-center">
+                <h3 class="logo-font text-muted">Rating:</h3>
+                <hr class="hr-center">
+                <br>
+                <p class="lead">{{user.profile.rating}}</p>
             </div>
-            <div class="col justify-content-evenly border-white">
-                Four
+            <div class="col border-white p-3 text-center">
+                <h3 class="logo-font text-muted">Rank:</h3>
+                <hr class="hr-center">
+                <br>
+                {% if user.profile.rank == 5 %}
+                    <p class="lead">General</p>
+                {% elif user.profile.rank == 4 %}
+                    <p class="lead">Sergeant</p>
+                {% elif user.profile.rank == 3 %}
+                    <p class="lead">Officer</p>
+                {% elif user.profile.rank == 2 %}
+                    <p class="lead">Recruit</p>
+                {% elif user.profile.rank == 1 %}
+                    <p class="lead">Member</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-2 offset-lg-1">
+                <div class="profile-photo">
+                    <img src="{{ user.profile.image.url }}" alt="{{user}}s photo">
+                </div>
+                <div class="d-grid gap-2 w-100 mx-auto">
+                    <button class="btn btn-success mt-4 btn-sm" type="button">Add Product</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Edit Product</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Edit Profile</button>
+                    <button class="btn btn-danger btn-sm" type="button">Delete Product</button>
+                    <button class="btn btn-danger btn-sm" type="button">Delete Profile</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7 col-lg-9">
+                <!--Inner Layer-->
+                <div class="row border-white profile-control-card" id="profile-details">
+                    <!--Left Div-->
+                    <div class="col-12 col-sm-12 col-md-6">
+                        <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
+                        <p class="h5"><span class="text-muted">First Name:</span> {{user.profile.first_name}}</p>
+                        <p class="h5"><span class="text-muted">Second Name:</span> {{user.profile.last_name}}</p>
+                    {% if user.profile.user_type == 1 %}
+                        <p class="h5"><span class="text-muted">Account Type:</span> Member</p>
+                    {% elif user.profile.user_type == 2 %}
+                        <p class="h5"><span class="text-muted">Account Type:</span> Freelancer</p>
+                    {% endif %}
+                    </div>
+                    <!--Right Div-->
+                    <div class="col-12 col-sm-12 col-md-6">
+                        <p class="h5"><span class="text-muted">Rating:</span> {{user.profile.rating}}</p>
+                        <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
+                        <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
+                        <p class="h5"><span class="text-muted">Username:</span> {{user}}</p>
+                    </div>
+                </div>
+                <div class="row border-white profile-control-card" id="add_product">
+                    
+                </div>
+                <div class="row border-white profile-control-card" id="edit_product">
+                    section
+                </div>
+                <div class="row border-white profile-control-card" id="edit_profile">
+                    section
+                </div>
+                <div class="row border-white profile-control-card" id="delete_product">
+                    section
+                </div>
+                <div class="row border-white profile-control-card" id="delete_profile">
+                    section
+                </div>
             </div>
         </div>
     </div>
