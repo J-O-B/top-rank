@@ -11,7 +11,7 @@ today = date.today()
 
 
 @login_required
-def profile(request):
+def MakeOrUpdate(request):
     """
     View To Return Homepage
     """
@@ -40,7 +40,7 @@ def profile(request):
     else:
         form = UserUpdateForm(instance=profile)
 
-    template = "profile/home.html"
+    template = "profile/make_update.html"
     form = UserUpdateForm()
     context = {
         'message': message,
@@ -50,3 +50,22 @@ def profile(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def ProfileView(request):
+    """
+    A View To Show Basic User Information
+    """
+    # Try to get the user profile, else create a new instance if none exists
+    user = request.user
+    try:
+        profile = user.profile
+    except Exception:
+        profile = False
+    # See if a user profile exists, if not create one for that user
+    if profile:
+        pass
+    else:
+        create_or_update_user_profile(
+            sender=user, instance=user, created=today)

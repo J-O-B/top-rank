@@ -25,6 +25,10 @@ class ProfileChoices():
         (4, "Sergeant"),
         (5, "General"),
     )
+    MEMBERTYPE = (
+        (1, "Member"),
+        (2, "Freelancer"),
+    )
 
 
 class Profile(models.Model):
@@ -72,6 +76,10 @@ class Profile(models.Model):
 
     rank = models.IntegerField(
         choices=ProfileChoices.RANK,
+        null=True, blank=True, default=1)
+
+    user_type = models.IntegerField(
+        choices=ProfileChoices.MEMBERTYPE,
         null=True, blank=True, default=1)
 
     image_url = models.URLField(

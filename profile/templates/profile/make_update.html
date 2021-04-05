@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row mb-5" id="registration-container">
+        <div class="col-12 col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-lg-6 offset-lg-3 border-white">
+            <div class="row">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <!--Header-->
+                    <div class="p-2 bd-highlight">
+                        <hr>
+                        <h1 class="logo-font mb-4 text-center">Profile Update</h1>
+                        <p class="lead text-muted text-center">Please Complete Your Profile</p>
+                        <hr>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                            {% csrf_token %}
+                            <div class="row" id="first">
+                                <h3 class="text-center">Personal Details</h3>
+                                
+                                <label for="id_user_type" class="">Requested Profile Type</label> 
+                                <select name="user_type" class="select form-control" id="id_user_type"> 
+                                    <option value="">---------</option> 
+                                    <option value="1" selected>Member</option> 
+                                    <option value="2">Freelancer</option>
+                                </select>
+                    
+                                <label for="id_first_name" class="">First name</label> 
+                                <input type="text" name="first_name" maxlength="100" class="textinput textInput form-control" id="id_first_name">
+                                
+                                <label for="id_last_name" class="">Last name</label> 
+                                <input type="text" name="last_name" maxlength="100" class="textinput textInput form-control" id="id_last_name">
+                                
+                                <label for="id_email" class="">Email Address</label> 
+                                <input type="email" name="email" maxlength="100" class="emailinput form-control" id="id_email">
+                    
+                                <label for="id_phone" class="">Phone Number</label> 
+                                <input type="text" name="phone" maxlength="50" class="textinput textInput form-control" id="id_phone">
+                            
+                                <hr>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" disabled>Previous</button>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="view2">Next</button>
+                            </div>
+                            <div class="row" id="second">
+                                <h3 class="text-center">Bio (will be visible to others)</h3>
+                                
+                                <label for="id_bio" class="">Bio</label> 
+                                <textarea name="bio" cols="40" rows="10" class="textarea form-control" id="id_bio">
+                                </textarea>
+                    
+                                <hr>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="back1">Previous</button>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="view3">next</button>
+                            </div>
+                            <div class="row" id="third">
+                                <h3 class="text-center">Skills & Qualifications</h3>
+                    
+                                <label for="id_skill" class="">Skill</label> 
+                                <select name="skill" class="select form-control" id="id_skill"> 
+                                    <option value="" selected>---------</option> 
+                                    <option value="seo">SEO</option> 
+                                    <option value="web">Web Design</option> 
+                                    <option value="content">Content Creation</option> 
+                                    <option value="graphic">Graphic Design</option> 
+                                    <option value="video">Video Editing</option> 
+                                    <option value="other">Other</option>
+                                </select>
+                                
+                                <label for="id_qualification" class="">Qualification</label> 
+                                <select name="qualification" class="select form-control" id="id_qualification"> 
+                                    <option value="">---------</option> 
+                                    <option value="high_school">High School</option> 
+                                    <option value="university">University</option> 
+                                    <option value="none" selected>Prefer Not To Say</option>
+                                </select>
+                    
+                                <hr>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="back2">Previous</button>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="view4">next</button>
+                            </div>
+                            <div class="row" id="fourth">
+                                <h1>Four</h1>
+                                
+                                <label for="id_image" class="">Image</label> 
+                                <input type="file" name="image" accept="image/*" class="clearablefileinput form-control-file" id="id_image">
+                                <label for="id_facebook" class="">Facebook</label> 
+                                <input type="text" name="facebook" maxlength="255" class="textinput textInput form-control" id="id_facebook">
+                                <label for="id_linkedin" class="">Linkedin</label> 
+                                <input type="text" name="linkedin" maxlength="255" class="textinput textInput form-control" id="id_linkedin"> 
+                                <label for="id_instagram" class="">Instagram</label> 
+                                <input type="text" name="instagram" maxlength="255" class="textinput textInput form-control" id="id_instagram">
+                                <label for="id_twitter" class="">Twitter</label> 
+                                <input type="text" name="twitter" maxlength="255" class="textinput textInput form-control" id="id_twitter"> 
+                                <label for="id_personal_website" class="">Personal website</label> 
+                                <input type="text" name="personal_website" maxlength="255" class="textinput textInput form-control" id="id_personal_website">
+                    
+                                <button class="btn btn-black rounded-0 text-uppercase float-end" id="back3">Previous</button>
+                                <button class="btn btn-black rounded-0 text-uppercase float-end">Update Information</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+{% endblock %}
+{% block postloadjs %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#second').hide();
+            $('#third').hide();
+            $('#fourth').hide();
+        });
+        // Forwards
+        $('#view2').click(function(e){
+                e.preventDefault();
+                $('#first').hide();
+                $('#second').show();
+            });
+        $('#view3').click(function(e){
+                e.preventDefault();
+                $('#second').hide();
+                $('#third').show();
+            });
+        $('#view4').click(function(e){
+                e.preventDefault();
+                $('#third').hide();
+                $('#fourth').show();
+            });
+        // Backwards
+        $('#back1').click(function(e){
+                e.preventDefault();
+                $('#second').hide();
+                $('#first').show();
+            });
+        $('#back2').click(function(e){
+                e.preventDefault();
+                $('#third').hide();
+                $('#second').show();
+            });
+        $('#back3').click(function(e){
+                e.preventDefault();
+                $('#fourth').hide();
+                $('#third').show();
+            });
+    </script>
+{% endblock %}

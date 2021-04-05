@@ -218,6 +218,9 @@ body{
     height: auto;
     margin: 0 auto;
 }
+#registration-container{
+    margin-top: -100px;
+}
 /* ------------------------------------- Homepage --- */
 #hero{
     position: relative;
