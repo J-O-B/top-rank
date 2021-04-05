@@ -16,16 +16,34 @@ def profile(request):
     View To Return Homepage
     """
     user = request.user
-    if user:
-        profile = "found"
+    try:
+        profile = user.profile
+    except Exception:
+        profile = False
+    # See if a user profile exists, if not create one for that user
+    if profile:
+        profile = user.profile
+        message = "To Edit Your Profile, Fill Out The Form Below"
+    else:
         create_or_update_user_profile(
             sender=user, instance=user, created=today)
+        profile = user.profile
+        message = "It seems like you didn't have a profile on record, \
+            please update your information below:"
+
+    if request.method == "POST":
+        form = UserUpdateForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+        else:
+            pass
     else:
-        profile = "not found"
+        form = UserUpdateForm(instance=profile)
 
     template = "profile/home.html"
     form = UserUpdateForm()
     context = {
+        'message': message,
         "profile": profile,
         "form": form,
         'on_profile_page': True,
