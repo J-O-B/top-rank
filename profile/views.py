@@ -58,14 +58,27 @@ def ProfileView(request):
     A View To Show Basic User Information
     """
     # Try to get the user profile, else create a new instance if none exists
-    user = request.user
+    try:
+        user = request.user
+    except Exception:
+        user = False
+
     try:
         profile = user.profile
     except Exception:
         profile = False
     # See if a user profile exists, if not create one for that user
     if profile:
-        pass
+        profile = user.profile
     else:
         create_or_update_user_profile(
             sender=user, instance=user, created=today)
+        profile = user.profile
+
+    template = "profile/profile.html"
+    context = {
+        "user": user,
+        "profile": profile,
+    }
+
+    return render(request, template, context)

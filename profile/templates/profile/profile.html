@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <p class="small breadcrumbs">
+                <strong>You Are Here:</strong> 
+                <a href="{% url 'home' %}">HOME</a> <i class="fas fa-chevron-circle-right"></i> 
+                <a href="{% url 'ProfileView' %}">PROFILE</a>
+            </p>
+            <div class="col-12 text-center">
+                <h1 class="logo-font display-3 text-muted">
+                    {{user}}'s Profile
+                </h1>
+                {% if user.profile.user_type == 1 %}
+                    <h2><span class="text-muted logo-font">Account Type:</span> <u>Member</u></h2>
+                {% else %}
+                    <h2><span class="text-muted logo-font">Account Type:</span> <u>Freelancer</u></h2>
+                {% endif %}
+                <p class="h4">line</p>
+                <hr class="hr-center">
+            </div>
+        </div>
+    </div>
+
+    
+
+{% endblock %}
+{% block postloadjs %}
+    <script type="text/javascript">
+
+    </script>
+{% endblock %}
