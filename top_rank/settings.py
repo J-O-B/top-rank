@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'about-us',
     'products',
     'profile',
+    'messenger',
+
 ]
 
 MIDDLEWARE = [

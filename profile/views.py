@@ -10,6 +10,7 @@ from datetime import date
 
 today = date.today()
 
+
 def after_login(request):
     user = request.user
     template = "profile/after-login.html"

@@ -128,7 +128,7 @@ class Profile(models.Model):
     member_since = models.DateField(auto_now=True)
 
     def __str__(self):
-        return str(self.user.username)
+        return str(self.user)
 
 
 @receiver(post_save, sender=User)
