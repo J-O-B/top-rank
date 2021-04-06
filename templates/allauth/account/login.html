@@ -72,7 +72,7 @@
                                     <a class="btn btn-outline-black btn-secondary rounded-1 w-100" href="{% url 'home' %}">Cancel</a>
                                 </div>
                                 <div class="col-6">
-                                    <button class="primaryAction btn btn-success rounded-1 w-100" type="submit">{% trans "Sign In" %}</button>
+                                    <button id="signin" class="primaryAction btn btn-success rounded-1 w-100" type="submit">{% trans "Sign In" %}</button>
                                 </div>
                             </div>
                             <p class="mt-2">
@@ -87,4 +87,11 @@
 
 
 
+{% endblock %}
+{% block postloadjs %}
+    <script type="text/javascript">
+        $('#signin').click(function(){
+            location.href = "www.yoursite.com";
+        });
+    </script>
 {% endblock %}

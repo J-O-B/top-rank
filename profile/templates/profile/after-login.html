@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Welcome {% if user.profile.first_name %}{{user.profile.first_name}}{% else %}{{user}}{% endif %}</h1>
+                <h3 class="text-muted">Configuring Website For You</h3>
+                <p class="lead">You will be redirected in <span id="countdown">5</span></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block postloadjs %}
+<script type="text/javascript">
+    let counter = 5;
+    let interval = setInterval(function() {
+        counter--;
+        $('#countdown').text(counter);
+    }, 1000);
+    $(document).ready(function () {
+        // Handler for .ready() called.
+        window.setTimeout(function () {
+            location.href = "/profiles/";
+        }, 5000);
+    });
+</script>
+{% endblock %}

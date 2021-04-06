@@ -267,9 +267,11 @@ body{
     text-align: center;
     background-color: rgba(25,135,84,0.9);
     color: #333333;
-    text-shadow: 1px -1px 3px #fafafa;
     font-weight: bolder;
     padding: 5px;
+}
+.price{
+    font-size: small;
 }
 .downIcon{
     position: relative;
