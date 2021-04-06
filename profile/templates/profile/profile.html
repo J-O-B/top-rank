@@ -32,7 +32,7 @@
     {% if user.profile.user_type == 2 %}
         <!--Analytics Section-->
         <div class="container mb-5">
-            <div class="row">
+            <div class="row p-0 m-0">
                 <div class="col border-white p-3 text-center">
                     <h3 class="logo-font text-muted">Sales:</h3>
                     <hr class="hr-center">
@@ -73,7 +73,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-2 offset-lg-1">
+            <div class="col-12 col-sm-12 offset-sm-0 col-md-4 offset-md-1 col-lg-3 offset-lg-0">
                 <div class="profile-photo">
                     {% if user.profile.image %}
                         <img src="{{ user.profile.image.url }}" alt="{{user}}s photo">
@@ -94,8 +94,18 @@
                         <p class="h6 text-center"><span class="text-muted">Account Type:</span><br>Freelancer</p>
                     {% endif %}
                     <div class="row ms-3 me-3">
-                        <button class="btn btn-success btn-sm" type="button" id="edit_my_profile">Edit Profile</button><br>
-                        <button class="btn btn-success mt-1 btn-sm" type="button">Edit Profile</button>    
+                        <button class="btn btn-success btn-sm mb-2" type="button" id="edit_my_profile">Edit Profile</button><br>
+                        <button class="btn btn-success mt-1 btn-sm" type="button" id="expand-controls">More Controls<br>
+                            <i class="fas fa-chevron-circle-down" id="down"></i>
+                            <i class="fas fa-chevron-circle-up" id="up"></i>
+                        </button>   
+                        <div class="row g-0 mt-2" id="extra-controls">
+                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -145,11 +155,19 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('#contain-edit').hide();
+            $('#up').hide();
+            $('#extra-controls').hide();
         })
         $('#edit_my_profile').click(function(e){
             e.preventDefault();
             $('#contain-details').hide();
             $('#contain-edit').show(1000);
+        })
+        $('#expand-controls').click(function(e){
+            e.preventDefault();
+            $('#up').toggle();
+            $('#down').toggle();
+            $('#extra-controls').toggle();
         })
     </script>
 {% endblock %}

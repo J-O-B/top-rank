@@ -38,6 +38,7 @@ class Profile(models.Model):
     """
     A profile model to allow customized user experience.
     """
+
     user = models.OneToOneField(
         User, on_delete=models.CASCADE)
 
