@@ -23,4 +23,16 @@ Additional Ideas:
 - 
 
 
+Bugs & Issues:
+- Profile not created bug:
+Allauth creates a user but this is just the basic username, email and password. To keep allauth intact, I elected to keep the basic allauth user registration etc 
+intact and created a custom app called profiles, this app has a one to one relationship with each user profile. Unfortunately the first time a user would try access 
+their profile / dashboard I was checking to see if they had a profile, and if not a profile would be created automatically with blank fields. As the code was running 
+possibly faster than the database connection, I thought of using the sleep function, however, elected to use a method with more feedback for users, this involves each 
+time a user logs in, a query is sent to the relevant apps, to check the status, and if nothing exists, it is created. A simple html page with a countdown and message 
+displayed on screen allows a user see that something is happening, instead of simply freezing the page with a sleep function.
+
+Type String In Admin Panel:
+I was getting a typeof error with the returned names for the admin panel. To fix this i simply added the str() attribute to all returned strings. This ensures the data 
+is infact a string format and will avoid this issue.
 

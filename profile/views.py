@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm
 from .models import Profile, create_or_update_user_profile
 from django.contrib import messages
+from messenger.models import CustomMessage
 
 from datetime import date
 
@@ -35,6 +36,10 @@ def ProfileView(request):
 
     user = request.user
     profile = get_object_or_404(Profile, user=user)
+    try:
+        dm = CustomMessage.objects.all()
+    except Exception:
+        pass
 
     if request.method == "POST":
         form = UserUpdateForm(request.POST, request.FILES, instance=profile)
@@ -47,6 +52,7 @@ def ProfileView(request):
 
     template = "profile/profile.html"
     context = {
+        "dm": dm,
         "form": form,
         "user": user,
     }

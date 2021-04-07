@@ -119,7 +119,21 @@
                         <p>You currently have <span class="bg-success p-2">0</span> active projects, and <span class="bg-warning p-2">0</span> projects in your queue.</p>
                     </div>
                     <div class="row border-white profile-control-card" id="add_product">
-                        
+                        {% for x in dm %}
+                            <div class="container border-white">
+                                <div class="row">
+                                    <div class="col">
+                                        <p><span class="text-muted">Sent From:</span>{{x.sender}}</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <p><span class="text-muted">Sent On:</span>{{x.created}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p>{{x.body}}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                     <div class="row border-white profile-control-card" id="edit_product">
                         section
