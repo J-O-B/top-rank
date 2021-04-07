@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('#up').hide();
     $('#extra-controls').hide();
     $('#message-container').hide();
+    $('#messenger').hide();
 });
 $('#edit_my_profile').click(function(e){
     e.preventDefault();
@@ -22,3 +23,16 @@ $('#show-messages').click(function(){
 
 
 // Messages
+$('#open-messenger').click(function(){
+    $('#messenger').show();
+    $('html, body').animate({
+        scrollTop: $('#messenger').offset().top - 20
+    }, 'slow');
+})
+
+$(".message-box").click(function(){
+    $('#initMessage').hide();
+    let children = $(this).children();
+    let sentBy = children.find('.sender').children('p');
+    $('#sent_by').text(sentBy);
+})
