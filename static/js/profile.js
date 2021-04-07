@@ -32,7 +32,10 @@ $('#open-messenger').click(function(){
 
 $(".message-box").click(function(){
     $('#initMessage').hide();
-    let children = $(this).children();
-    let sentBy = children.find('.sender').children('p');
-    $('#sent_by').text(sentBy);
+    let sentBy = $(this).find('.sender').text();
+    let created = $(this).find('.created').text();
+    let directMessage = $(this).find('.directMessage').text();
+    $('#sent_by').text(`Sent From: ${sentBy}`);
+    $('#created').text(`Sent On: ${created}`);
+    $('#directMessage').text(`Message: ${directMessage}`);
 })
