@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 
 class CustomMessage(models.Model):
     class Meta:
         verbose_name_plural = "Messages"
-
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     sender = models.ForeignKey(
         User, related_name="sender", on_delete=models.CASCADE)
     reciever = models.ForeignKey(
@@ -21,4 +22,5 @@ class CustomMessage(models.Model):
 
     def get_created(self):
         return str(self.created)
+    
 

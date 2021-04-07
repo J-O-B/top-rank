@@ -26,7 +26,6 @@
             </div>
         </div>
     </div>
-    <!--If They Dont Have A Profile-->
 
     <!-- If They Have A Profile-->
     {% if user.profile.user_type == 2 %}
@@ -70,6 +69,35 @@
             </div>
         </div>
     {% endif %}
+    <!--General Analytics-->
+    <div class="container mb-5">
+            <div class="row p-0 m-0">
+                <div class="col border-white p-3 text-center">
+                    <h3 class="logo-font text-muted">Inbox:</h3>
+                    <hr class="hr-center">
+                    <br>
+                    <p class="lead">{{inboxcount}} {% if inboxcount > 1 %}messages{% else %}message{% endif %}</p>
+                </div>
+                <div class="col border-white p-3 text-center">
+                    <h3 class="logo-font text-muted">Outbox:</h3>
+                    <hr class="hr-center">
+                    <br>
+                    <p class="lead">{{outboxcount}} {% if outboxcount > 1 %}messages{% else %}message{% endif %}</p>
+                </div>
+                <div class="col border-white p-3 text-center">
+                    <h3 class="logo-font text-muted">Purchases:</h3>
+                    <hr class="hr-center">
+                    <br>
+                    <p class="lead">{{user.profile.orders}}</p>
+                </div>
+                <div class="col border-white p-3 text-center">
+                    <h3 class="logo-font text-muted">Purchase Total:</h3>
+                    <hr class="hr-center">
+                    <br>
+                    <p class="lead">{{user.profile.orders}}</p>
+                </div>
+            </div>
+        </div>
 
     <div class="container">
         <div class="row">
@@ -100,7 +128,7 @@
                             <i class="fas fa-chevron-circle-up" id="up"></i>
                         </button>   
                         <div class="row g-0 mt-2" id="extra-controls">
-                            <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
+                            <button class="btn btn-sm btn-primary mt-1 mb-1" id="show-messages">Messages</button>
                             <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
                             <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
                             <button class="btn btn-sm btn-primary mt-1 mb-1">One</button>
@@ -118,8 +146,10 @@
                         <p class="lead">Welcome Back {% if user.profile.first_name %}{{ user.profile.first_name }}{% else %}{{ user }}{% endif %}</p>
                         <p>You currently have <span class="bg-success p-2">0</span> active projects, and <span class="bg-warning p-2">0</span> projects in your queue.</p>
                     </div>
-                    <div class="row border-white profile-control-card" id="add_product">
-                        {% for x in dm %}
+                    <div class="row border-white profile-control-card" id="message-container">
+                        <h1>Messages</h1>
+                        <p>You currently have <span class="bg-success p-2">{{inboxcount}}</span> {% if inboxcount > 1 %}messages{% else %}message{% endif %} in your inbox.</p>
+                        {% for x in inbox %}
                             <div class="container border-white">
                                 <div class="row">
                                     <div class="col">
@@ -132,30 +162,22 @@
                                 <div class="row">
                                     <p>{{x.body}}</p>
                                 </div>
+                                <div class="row">
+                                    
+                                </div>
                             </div>
                         {% endfor %}
+                        
                     </div>
-                    <div class="row border-white profile-control-card" id="edit_product">
-                        section
-                    </div>
-                    <div class="row border-white profile-control-card" id="edit_profile">
-                        section
-                    </div>
-                    <div class="row border-white profile-control-card" id="delete_product">
-                        section
-                    </div>
-                    <div class="row border-white profile-control-card" id="delete_profile">
-                        section
-                    </div>
-                </div>
-                <div class="row" id="contain-edit">
-                    <div class="row border-white profile-control-card">
-                        <h1>Edit Profile</h1>
-                        <form method="POST" action="{% url 'ProfileView' %}">
-                            {% csrf_token %}
-                            {{form|crispy}}  
-                            <button class="btn btn-success" type="submit">Update</button>  
-                        </form>
+                    <div class="row" id="contain-edit">
+                        <div class="row border-white profile-control-card">
+                            <h1>Edit Profile</h1>
+                            <form method="POST" id="edit-profile-form">
+                                {% csrf_token %}
+                                {{form|crispy}}  
+                                <button class="btn btn-success" type="submit" id="submitProfileEdit">Update</button>  
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,22 +188,12 @@
 
 {% endblock %}
 {% block postloadjs %}
+    <script src="{% static 'js/profile.js' %}">
+    </script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('#contain-edit').hide();
-            $('#up').hide();
-            $('#extra-controls').hide();
-        })
-        $('#edit_my_profile').click(function(e){
-            e.preventDefault();
-            $('#contain-details').hide();
-            $('#contain-edit').show(1000);
-        })
-        $('#expand-controls').click(function(e){
-            e.preventDefault();
-            $('#up').toggle();
-            $('#down').toggle();
-            $('#extra-controls').toggle();
+        $('#submitProfileEdit').click(function(){
+            $('#edit-profile-form').attr('action', "{% url 'ProfileView' %}");
         })
     </script>
+
 {% endblock %}

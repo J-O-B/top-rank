@@ -6,6 +6,7 @@ from .forms import UserUpdateForm
 from .models import Profile, create_or_update_user_profile
 from django.contrib import messages
 from messenger.models import CustomMessage
+from messenger.forms import DirectMessage
 
 from datetime import date
 
@@ -36,24 +37,41 @@ def ProfileView(request):
 
     user = request.user
     profile = get_object_or_404(Profile, user=user)
+    messages = CustomMessage.objects.all()
     try:
-        dm = CustomMessage.objects.all()
+        inbox = CustomMessage.objects.filter(reciever=user)
+        outbox = CustomMessage.objects.filter(sender=user)
+        inboxcount = CustomMessage.objects.filter(reciever=user).count()
+        outboxcount = CustomMessage.objects.filter(sender=user).count()
     except Exception:
-        pass
+        inbox = None
+        outbox = None
 
     if request.method == "POST":
-        form = UserUpdateForm(request.POST, request.FILES, instance=profile)
-        if form.is_valid():
-            profile = form.save()
-        else:
-            pass
-    else:
-        form = UserUpdateForm(instance=profile)
+        form1 = UserUpdateForm(request.POST, request.FILES, instance=profile)
+        if form1.is_valid():
+            profile = form1.save()
 
+        form2 = DirectMessage(request.POST, instance=user)
+        if form2.is_valid():
+            messages = form2.save()
+        
+    else:
+        form1 = UserUpdateForm(instance=profile)
+        form2 = DirectMessage(request.POST, instance=user)
+
+    if str(inboxcount) == "0":
+        inboxcount = "0"
+    if str(outboxcount) == "0":
+        outboxcount = "0"
     template = "profile/profile.html"
     context = {
-        "dm": dm,
-        "form": form,
+        "inbox": inbox,
+        "inboxcount": inboxcount,
+        "outbox": outbox,
+        "outboxcount": outboxcount,
+        "form": form1,
+        "IM": form2,
         "user": user,
     }
 

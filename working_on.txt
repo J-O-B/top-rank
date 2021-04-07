@@ -3,6 +3,7 @@ Products:
 - extend add product to user dashboard,
 
 Profile:
+- attach uuid to profiles as primary key
 - build out profile page
 - check further ways to gather analytics
 - define the ranking system
